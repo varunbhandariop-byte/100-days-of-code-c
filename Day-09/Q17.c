@@ -1,20 +1,37 @@
-Write a program to calculate the area and perimeter of a rectangle given its length and breadth.
-  #include <stdio.h>
+Write a program to find the roots of a quadratic equation and categorize them.
+#include <stdio.h>
+#include <math.h>
 
 int main() {
-    float length, breadth, area, perimeter;
+    float a, b, c, discriminant, root1, root2, realPart, imaginaryPart;
 
-    printf("Enter length: ");
-    scanf("%f", &length);
+    printf("Enter coefficients a, b and c: ");
+    scanf("%f %f %f", &a, &b, &c);
 
-    printf("Enter breadth: ");
-    scanf("%f", &breadth);
+    discriminant = b * b - 4 * a * c;
 
-    area = length * breadth;
-    perimeter = 2 * (length + breadth);
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
 
-    printf("Area = %.2f\n", area);
-    printf("Perimeter = %.2f\n", perimeter);
+        printf("Roots are real and different.\n");
+        printf("Root 1 = %.2f\n", root1);
+        printf("Root 2 = %.2f", root2);
+    }
+    else if (discriminant == 0) {
+        root1 = -b / (2 * a);
+
+        printf("Roots are real and equal.\n");
+        printf("Root 1 = Root 2 = %.2f", root1);
+    }
+    else {
+        realPart = -b / (2 * a);
+        imaginaryPart = sqrt(-discriminant) / (2 * a);
+
+        printf("Roots are complex and different.\n");
+        printf("Root 1 = %.2f + %.2fi\n", realPart, imaginaryPart);
+        printf("Root 2 = %.2f - %.2fi", realPart, imaginaryPart);
+    }
 
     return 0;
 }
