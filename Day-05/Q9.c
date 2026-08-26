@@ -1,18 +1,19 @@
-Write a program to classify a triangle as Equilateral, Isosceles, or Scalene based on its side lengths
+Write a program to input time in seconds and convert it to hours:minutes:seconds format.
+
 #include <stdio.h>
 
 int main() {
-    float a, b, c;
+    int seconds, hours, minutes, remaining;
 
-    printf("Enter the three sides of the triangle: ");
-    scanf("%f %f %f", &a, &b, &c);
+    printf("Enter time in seconds: ");
+    scanf("%d", &seconds);
 
-    if (a == b && b == c)
-        printf("Equilateral Triangle");
-    else if (a == b || b == c || a == c)
-        printf("Isosceles Triangle");
-    else
-        printf("Scalene Triangle");
+    hours = seconds / 3600;
+    remaining = seconds % 3600;
+    minutes = remaining / 60;
+    seconds = remaining % 60;
+
+    printf("Time = %02d:%02d:%02d", hours, minutes, seconds);
 
     return 0;
 }
