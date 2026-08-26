@@ -1,29 +1,18 @@
-Write a program to find the roots of a quadratic equation and categorize them.
+Write a program to find and display the sum of the first n natural numbers.
+
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    float a, b, c, discriminant, root1, root2;
+    int n, sum = 0;
 
-    printf("Enter coefficients a, b and c: ");
-    scanf("%f %f %f", &a, &b, &c);
+    printf("Enter n: ");
+    scanf("%d", &n);
 
-    discriminant = b * b - 4 * a * c;
-
-    if (discriminant > 0) {
-        root1 = (-b + sqrt(discriminant)) / (2 * a);
-        root2 = (-b - sqrt(discriminant)) / (2 * a);
-
-        printf("Two distinct real roots: %.2f and %.2f", root1, root2);
+    for (int i = 1; i <= n; i++) {
+        sum = sum + i;
     }
-    else if (discriminant == 0) {
-        root1 = -b / (2 * a);
 
-        printf("Two equal real roots: %.2f", root1);
-    }
-    else {
-        printf("No real roots (complex roots)");
-    }
+    printf("Sum of first %d natural numbers = %d", n, sum);
 
     return 0;
 }
