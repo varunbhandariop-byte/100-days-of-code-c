@@ -1,30 +1,16 @@
-Write a program to calculate library fine based on late days as follows: 
-First 5 days late: ₹2/day 
-Next 5 days late: ₹4/day 
-Next 20 days days late: ₹6/day 
-More than 30 days: Membership Cancelled.
+Write a program to input a year and check whether it is a leap year or not using conditional statements.
   #include <stdio.h>
 
 int main() {
-    int days, fine = 0;
+    int year;
 
-    printf("Enter number of late days: ");
-    scanf("%d", &days);
+    printf("Enter a year: ");
+    scanf("%d", &year);
 
-    if (days <= 5) {
-        fine = days * 2;
-        printf("Library Fine = Rs.%d", fine);
-    }
-    else if (days <= 10) {
-        fine = (5 * 2) + ((days - 5) * 4);
-        printf("Library Fine = Rs.%d", fine);
-    }
-    else if (days <= 30) {
-        fine = (5 * 2) + (5 * 4) + ((days - 10) * 6);
-        printf("Library Fine = Rs.%d", fine);
-    }
-    else {
-        printf("Membership Cancelled.");
+    if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+        printf("The year is a leap year.");
+    } else {
+        printf("The year is not a leap year.");
     }
 
     return 0;
