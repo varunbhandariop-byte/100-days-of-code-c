@@ -1,17 +1,24 @@
-Write a program to print the sum of the first n odd numbers.
+Write a program to input a character and check whether it is an uppercase alphabet, lowercase alphabet, digit, or special character.
   #include <stdio.h>
 
 int main() {
-    int n, i, sum = 0;
+    char ch;
 
-    printf("Enter n: ");
-    scanf("%d", &n);
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
 
-    for (i = 1; i <= n; i++) {
-        sum += (2 * i - 1);
+    if (ch >= 'A' && ch <= 'Z') {
+        printf("Uppercase alphabet");
+    } 
+    else if (ch >= 'a' && ch <= 'z') {
+        printf("Lowercase alphabet");
+    } 
+    else if (ch >= '0' && ch <= '9') {
+        printf("Digit");
+    } 
+    else {
+        printf("Special character");
     }
-
-    printf("Sum of first %d odd numbers = %d", n, sum);
 
     return 0;
 }
