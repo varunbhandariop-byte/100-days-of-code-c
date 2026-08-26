@@ -1,20 +1,15 @@
-Write a program to input a character and check whether it is an uppercase alphabet, lowercase alphabet, digit, or special character.
+Write a program to convert temperature from Celsius to Fahrenheit.
   #include <stdio.h>
 
 int main() {
-    char ch;
+    float celsius, fahrenheit;
 
-    printf("Enter a character: ");
-    scanf("%c", &ch);
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &celsius);
 
-    if (ch >= 'A' && ch <= 'Z')
-        printf("Uppercase alphabet");
-    else if (ch >= 'a' && ch <= 'z')
-        printf("Lowercase alphabet");
-    else if (ch >= '0' && ch <= '9')
-        printf("Digit");
-    else
-        printf("Special character");
+    fahrenheit = (celsius * 9 / 5) + 32;
+
+    printf("Temperature in Fahrenheit = %.2f", fahrenheit);
 
     return 0;
 }
