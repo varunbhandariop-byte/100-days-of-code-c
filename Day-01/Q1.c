@@ -1,23 +1,11 @@
-Write a program to input a year and check whether it is a leap year or not using conditional statements.
-  #include <stdio.h>
+Write a program to input two numbers and display their sum
+#include <stdio.h>
 
 int main() {
-    int year;
+    int a, b;
 
-    scanf("%d", &year);
-
-    if (year % 400 == 0) {
-        printf("Leap year");
-    }
-    else if (year % 100 == 0) {
-        printf("Not a leap year");
-    }
-    else if (year % 4 == 0) {
-        printf("Leap year");
-    }
-    else {
-        printf("Not a leap year");
-    }
+    scanf("%d %d", &a, &b);
+    printf("%d", a + b);
 
     return 0;
 }
