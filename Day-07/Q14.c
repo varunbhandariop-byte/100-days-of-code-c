@@ -1,31 +1,18 @@
-Write a program to calculate electricity bill based on units consumed with these rates: 
-First 100 units at ₹5/unit 
-Next 100 units at ₹7/unit 
-Next 100 units at ₹10/unit 
-Above at ₹12/unit
-  #include <stdio.h>
+Write a program to input a character and check whether it is a vowel or consonant using if–else.
+#include <stdio.h>
 
 int main() {
-    int units;
-    float bill;
+    char ch;
 
-    printf("Enter units consumed: ");
-    scanf("%d", &units);
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
 
-    if (units <= 100) {
-        bill = units * 5;
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+        ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+        printf("The character is a vowel.");
+    } else {
+        printf("The character is a consonant.");
     }
-    else if (units <= 200) {
-        bill = (100 * 5) + ((units - 100) * 7);
-    }
-    else if (units <= 300) {
-        bill = (100 * 5) + (100 * 7) + ((units - 200) * 10);
-    }
-    else {
-        bill = (100 * 5) + (100 * 7) + (100 * 10) + ((units - 300) * 12);
-    }
-
-    printf("Electricity Bill = Rs.%.2f", bill);
 
     return 0;
 }
