@@ -1,11 +1,20 @@
-Write a program to input two numbers and display their sum
-#include <stdio.h>
+Write a program to calculate the area and perimeter of a rectangle given its length and breadth.
+  #include <stdio.h>
 
 int main() {
-    int a, b;
+    float length, breadth, area, perimeter;
 
-    scanf("%d %d", &a, &b);
-    printf("%d", a + b);
+    printf("Enter length: ");
+    scanf("%f", &length);
+
+    printf("Enter breadth: ");
+    scanf("%f", &breadth);
+
+    area = length * breadth;
+    perimeter = 2 * (length + breadth);
+
+    printf("Area = %.2f\n", area);
+    printf("Perimeter = %.2f\n", perimeter);
 
     return 0;
 }
