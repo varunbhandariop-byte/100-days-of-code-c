@@ -1,37 +1,19 @@
-Write a program to display the day of the week based on a number (1–7) using switch-case.
-  #include <stdio.h>
+Write a program to calculate simple and compound interest for given principal, rate, and time.
+
+#include <stdio.h>
+#include <math.h>
 
 int main() {
-    int day;
+    float p, r, t, si, ci;
 
-    printf("Enter a number (1-7): ");
-    scanf("%d", &day);
+    printf("Enter principal, rate and time: ");
+    scanf("%f %f %f", &p, &r, &t);
 
-    switch(day) {
-        case 1:
-            printf("Monday");
-            break;
-        case 2:
-            printf("Tuesday");
-            break;
-        case 3:
-            printf("Wednesday");
-            break;
-        case 4:
-            printf("Thursday");
-            break;
-        case 5:
-            printf("Friday");
-            break;
-        case 6:
-            printf("Saturday");
-            break;
-        case 7:
-            printf("Sunday");
-            break;
-        default:
-            printf("Invalid day number");
-    }
+    si = (p * r * t) / 100;
+    ci = p * pow((1 + r / 100), t) - p;
+
+    printf("Simple Interest = %.2f\n", si);
+    printf("Compound Interest = %.2f", ci);
 
     return 0;
 }
