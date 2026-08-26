@@ -1,18 +1,21 @@
-Write a program to print the product of even numbers from 1 to n.
+Write a program to input three numbers and find the largest among them using if–else.
   #include <stdio.h>
 
 int main() {
-    int n, i;
-    long long product = 1;
+    int a, b, c;
 
-    printf("Enter n: ");
-    scanf("%d", &n);
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
 
-    for (i = 2; i <= n; i += 2) {
-        product *= i;
+    if (a >= b && a >= c) {
+        printf("Largest number = %d", a);
     }
-
-    printf("Product of even numbers from 1 to %d = %lld", n, product);
+    else if (b >= a && b >= c) {
+        printf("Largest number = %d", b);
+    }
+    else {
+        printf("Largest number = %d", c);
+    }
 
     return 0;
 }
