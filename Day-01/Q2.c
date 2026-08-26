@@ -1,18 +1,20 @@
-Write a program to input a character and check whether it is a vowel or consonant using if–else.
-#include <stdio.h>
+Write a program to input two numbers and display their sum, difference, product, and quotient.
+  #include <stdio.h>
 
 int main() {
-    char ch;
+    float a, b;
 
-    scanf("%c", &ch);
+    scanf("%f %f", &a, &b);
 
-    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
-        ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
-        printf("Vowel");
-    }
-    else {
-        printf("Consonant");
-    }
+    printf("Sum: %.2f\n", a + b);
+    printf("Difference: %.2f\n", a - b);
+    printf("Product: %.2f\n", a * b);
+
+    if (b != 0)
+        printf("Quotient: %.2f\n", a / b);
+    else
+        printf("Quotient: Cannot divide by zero");
 
     return 0;
 }
+
